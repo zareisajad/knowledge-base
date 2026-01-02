@@ -1,0 +1,2 @@
+I used to have a /config in my personal notes to keep my custom configs (zsh, i3, vim etc)
+since I'm new to this whole customization thing I change my configs a lot and updating keeping them up to date with my last changes.
