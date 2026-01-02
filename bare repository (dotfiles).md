@@ -15,7 +15,8 @@ Reload shell:
 
 ### 3. Tell git to ignore untracked files
 
-```
+
 ```
 d‍tfiles config --local status.showUntrackedFiles no‍‍‍‍‍
+```
 
