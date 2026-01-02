@@ -20,3 +20,12 @@ Reload shell:
 d‍tfiles config --local status.showUntrackedFiles no‍‍‍‍‍
 ```
 
+#### Add your configs
+
+```
+dotfiles add ~/.config/i3
+dotfiles add ~/.config/nvim 
+dotfiles add ~/.zshrc 
+
+dotfiles commit -m "Initial dotfiles"
+```
