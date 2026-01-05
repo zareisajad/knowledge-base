@@ -34,7 +34,7 @@ Would serialize to a representation like this:
 ```
 
 
-# [Nested relationships](https://www.django-rest-framework.org/api-guide/relations/#nested-relationships)
+#### Nested relationships
 
 As opposed to previously discussed _references_ to another entity, the referred entity can instead also be embedded or _nested_ in the representation of the object that refers to it. Such nested relationships can be expressed by using serializers as fields.
 
