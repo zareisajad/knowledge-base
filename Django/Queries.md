@@ -1,6 +1,4 @@
 
-
-
 #### Field lookups
 
 Field lookups are how you specify the meat of an SQL `WHERE` clause. They’re specified as keyword arguments to the [`QuerySet`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#django.db.models.query.QuerySet "django.db.models.query.QuerySet") methods [`filter()`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#django.db.models.query.QuerySet.filter "django.db.models.query.QuerySet.filter"), [`exclude()`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#django.db.models.query.QuerySet.exclude "django.db.models.query.QuerySet.exclude") and [`get()`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#django.db.models.query.QuerySet.get "django.db.models.query.QuerySet.get").
@@ -19,8 +17,6 @@ Basic lookups keyword arguments take the form `field__lookuptype=value`.
 [`startswith`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#std-fieldlookup-startswith), [`endswith`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#std-fieldlookup-endswith)
 
 Starts-with and ends-with search, respectively. There are also case-insensitive versions called [`istartswith`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#std-fieldlookup-istartswith) and [`iendswith`](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#std-fieldlookup-iendswith).
-
-
 
 ### Complex lookups with `Q` objects
 
