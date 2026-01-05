@@ -57,3 +57,16 @@ class AlbumSerializer(serializers.ModelSerializer):
         model = Album
         fields = ['album_name', 'artist', 'tracks']
 ```
+
+
+```
+>>> data = {
+    'album_name': 'The Gray Album',
+    'artist': 'Danger Mouse',
+    'tracks': [
+        {'order': 1, 'title': 'Public Service Announcement', 'duration': 245},
+        {'order': 2, 'title': 'What More Can I Say', 'duration': 264},
+        {'order': 3, 'title': 'Encore', 'duration': 159},
+    ],
+}
+```
