@@ -32,3 +32,28 @@ Would serialize to a representation like this:
     ]
 }
 ```
+
+
+# [Nested relationships](https://www.django-rest-framework.org/api-guide/relations/#nested-relationships)
+
+As opposed to previously discussed _references_ to another entity, the referred entity can instead also be embedded or _nested_ in the representation of the object that refers to it. Such nested relationships can be expressed by using serializers as fields.
+
+If the field is used to represent a to-many relationship, you should add the `many=True` flag to the serializer field.
+
+## [Example](https://www.django-rest-framework.org/api-guide/relations/#example)
+
+For example, the following serializer:
+
+```
+class TrackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = ['order', 'title', 'duration']
+
+class AlbumSerializer(serializers.ModelSerializer):
+    tracks = TrackSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Album
+        fields = ['album_name', 'artist', 'tracks']
+```
