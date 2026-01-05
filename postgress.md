@@ -49,11 +49,10 @@ login to db:
 psql -U myuser -d mydb
 ```
 
-- `-d postgres` connects to the default `postgres` database so you can drop your dev DB.
+`-d postgres` connects to the default `postgres` database so you can drop your DB.
 ```bash
 psql -U your_db_user -d postgres
 ```
-
 
 ```sql
 DROP DATABASE cocode;
