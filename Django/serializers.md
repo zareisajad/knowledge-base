@@ -40,8 +40,6 @@ As opposed to previously discussed _references_ to another entity, the referred 
 
 If the field is used to represent a to-many relationship, you should add the `many=True` flag to the serializer field.
 
-## [Example](https://www.django-rest-framework.org/api-guide/relations/#example)
-
 For example, the following serializer:
 
 ```
