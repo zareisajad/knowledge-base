@@ -3,13 +3,29 @@ Sializers allow complex data such as querysets and model instances to be convert
 
 very similarly to Django's Form and ModelForm classes.
 
+#### SerializerMethodField
+
+This is a read-only field. It gets its value by calling a method on the serializer class it is attached to. It can be used to add any sort of data to the serialized representation of your object.
+
+```python
+class MeSerializer(serializers.ModelSerializer):
+    friends_count = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = User
+        fields = ["friends_count"]
+
+    def get_friends_count(self, obj):
+        return friends(obj).count()
+```
+
 #### PrimaryKeyRelatedField
 
 `PrimaryKeyRelatedField` may be used to represent the target of the relationship using its primary key.
 
 For example, the following serializer:
 
-```
+```python
 class AlbumSerializer(serializers.ModelSerializer):
     tracks = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
@@ -19,8 +35,9 @@ class AlbumSerializer(serializers.ModelSerializer):
 ```
 
 Would serialize to a representation like this:
+it returns only the id/pk of relation
 
-```
+```json
 {
     'album_name': 'Undun',
     'artist': 'The Roots',
@@ -33,7 +50,6 @@ Would serialize to a representation like this:
 }
 ```
 
-
 #### Nested relationships
 
 As opposed to previously discussed _references_ to another entity, the referred entity can instead also be embedded or _nested_ in the representation of the object that refers to it. Such nested relationships can be expressed by using serializers as fields.
@@ -42,7 +58,7 @@ If the field is used to represent a to-many relationship, you should add the `ma
 
 For example, the following serializer:
 
-```
+```python
 class TrackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
@@ -56,9 +72,10 @@ class AlbumSerializer(serializers.ModelSerializer):
         fields = ['album_name', 'artist', 'tracks']
 ```
 
+this is what it returns:
 
-```
->>> data = {
+```json
+data = {
     'album_name': 'The Gray Album',
     'artist': 'Danger Mouse',
     'tracks': [
