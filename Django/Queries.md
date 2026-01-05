@@ -11,3 +11,5 @@ Keyword argument queries – in filter() etc. – are “AND”ed together. If y
 ```python
 Q(question__startswith="Who") | Q(question__startswith="What")
 ```
+
+Each lookup function that takes keyword-arguments (filter(), get(), exclude() ) can also be passed one or more `Q` objects as positional (not-named) arguments. If you provide multiple `Q` object arguments to a lookup function, the arguments will be “AND”ed together. For example:
